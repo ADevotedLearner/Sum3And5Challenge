@@ -1,0 +1,42 @@
+/*
+
+//SUM 3 AND 5 CHALLENGE//
+
+Create a 'for' loop using a range of number from 1 to 1000 inclusive.
+
+Sum all the numbers that can be divided by both 3 and 5.
+
+Print out the numbers that have met the conditions above.
+
+Break out the loop once. You have found 5 numbers that have met the conditions above.
+
+After breaking out of the loop, print the sum of the numbers that met the conditions above.
+
+*/
+
+public class Main {
+
+    public static void main(String[] args) {
+        int countOfMatches = 0; // Initialize the count of matches to zero
+        int sumOfMatches = 0; // Initialize the sum of matches to zero
+
+        // Loop through the numbers 1 to 1000
+        for (int loopNumber = 1; loopNumber <= 1000; loopNumber++){
+            
+            // Check if the current number is a multiple of both 3 and 5
+            if ((loopNumber % 3 == 0) && (loopNumber % 5 == 0)){
+                countOfMatches++; // Increment the count of matches
+                sumOfMatches += loopNumber; // Add the current number to the sum of matches
+                System.out.println("Found a match = " +loopNumber); // Print the current number as a match
+            }
+
+            // If we have found five matches, exit the loop early using the break statement
+            if (countOfMatches == 5){
+                break;
+            }
+        }
+        
+        // Print the sum of the first five multiples of 3 and 5
+        System.out.println("Sum = " +sumOfMatches);
+    }
+}
